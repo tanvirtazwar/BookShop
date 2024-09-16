@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookShopWeb.Data;
+using BookShopWeb.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookShopWeb.Controllers
 {
     public class CategoryController : Controller
     {
+        private readonly ApplicationDbContext db;
+
+        public CategoryController(ApplicationDbContext db)
+        {
+            this.db = db;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            List<Category> objectCategory = db.Categories.ToList();
+            return View(objectCategory);
         }
     }
 }
