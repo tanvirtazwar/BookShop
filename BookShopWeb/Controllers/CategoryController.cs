@@ -67,7 +67,7 @@ namespace BookShopWeb.Controllers
 
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
+                db.Categories.Update(category);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
