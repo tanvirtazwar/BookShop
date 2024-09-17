@@ -18,5 +18,10 @@ namespace BookShopWeb.Controllers
             List<Category> objectCategory = db.Categories.ToList();
             return View(objectCategory);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
