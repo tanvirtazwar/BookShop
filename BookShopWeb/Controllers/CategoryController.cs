@@ -27,6 +27,11 @@ namespace BookShopWeb.Controllers
         [HttpPost]
         public IActionResult Create(Category category)
         {
+            if (!category.Name.All(char.IsLetter))
+            {
+                ModelState.AddModelError("Name", "The Category" +
+                    " Name must contain only letters.");
+            }
             if (ModelState.IsValid)
             {
                 db.Categories.Add(category);
