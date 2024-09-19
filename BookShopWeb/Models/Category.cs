@@ -7,7 +7,7 @@ namespace BookShopWeb.Models
     {
         [Key]
         public int Id { get; set; }
-        
+
         [Required]
         [MaxLength(30)]
         [DisplayName("Category Name")]
